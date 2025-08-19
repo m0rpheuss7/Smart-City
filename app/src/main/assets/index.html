@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>São Paulo Inteligente: Inovação para o Futuro da Cidade</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo-container">
+      <h1>São Paulo Inteligente</h1>
+      <span class="tagline">Cidade do Futuro</span>
+    </div>
+    <nav>
+      <a href="#inicio"><i class="fas fa-home"></i> Início</a>
+      <a href="#mapa"><i class="fas fa-map-marked-alt"></i> Mapa</a>
+      <a href="#projetos"><i class="fas fa-lightbulb"></i> Projetos</a>
+      <a href="#engajamento"><i class="fas fa-hands-helping"></i> Engajamento</a>
+      <a href="#dashboard"><i class="fas fa-chart-line"></i> Dashboard</a>
+      <a href="#investidores"><i class="fas fa-handshake"></i> Parcerias</a>
+    </nav>
+    <button class="menu-toggle" aria-label="Menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </header>
+
+  <!-- Página Inicial -->
+  <section id="inicio" class="hero">
+    <div class="hero-content">
+      <h2>São Paulo Inteligente: Inovação para o Futuro da Cidade</h2>
+      <p class="lead">Conectando tecnologia, sustentabilidade e cidadania para transformar São Paulo em uma cidade mais eficiente, limpa e humana.</p>
+
+      <div class="pilares">
+        <div class="pilar">
+          <i class="fas fa-bus"></i>
+          <span>Mobilidade</span>
+        </div>
+        <div class="pilar">
+          <i class="fas fa-leaf"></i>
+          <span>Sustentabilidade</span>
+        </div>
+        <div class="pilar">
+          <i class="fas fa-heartbeat"></i>
+          <span>Saúde</span>
+        </div>
+        <div class="pilar">
+          <i class="fas fa-recycle"></i>
+          <span>Gestão de Resíduos</span>
+        </div>
+        <div class="pilar">
+          <i class="fas fa-smile"></i>
+          <span>Qualidade de Vida</span>
+        </div>
+      </div>
+
+      <a href="#projetos" class="cta-button">Conheça nossos projetos <i class="fas fa-arrow-down"></i></a>
+    </div>
+
+  </section>
+
+  <!-- Mapa Interativo -->
+  <section id="mapa" class="map-section">
+    <div class="section-header">
+      <h2>Mapa Interativo de Projetos</h2>
+      <p class="section-subtitle">Explore os projetos inteligentes em tempo real pela cidade</p>
+    </div>
+    
+    <div class="map-filters">
+      <div class="filter-group">
+        <h3>Filtrar por categoria:</h3>
+        <div class="filters">
+          <label><input type="checkbox" class="filtro-mapa" value="ecoponto" checked> <i class="fas fa-recycle"></i> Ecopontos</label>
+          <label><input type="checkbox" class="filtro-mapa" value="ciclovia" checked> <i class="fas fa-solar-panel"></i> Ciclovias Solares</label>
+          <label><input type="checkbox" class="filtro-mapa" value="totem" checked> <i class="fas fa-heartbeat"></i> Totens de Saúde</label>
+          <label><input type="checkbox" class="filtro-mapa" value="bike" checked> <i class="fas fa-bicycle"></i> Bicicletas Compartilhadas</label>
+        </div>
+      </div>
+      <div class="filter-group">
+        <h3>Infraestrutura:</h3>
+        <div class="filters">
+          <label><input type="checkbox" class="filtro-mapa" value="hospital" checked> <i class="fas fa-hospital"></i> Hospitais</label>
+          <label><input type="checkbox" class="filtro-mapa" value="school" checked> <i class="fas fa-school"></i> Escolas</label>
+          <label><input type="checkbox" class="filtro-mapa" value="bus" checked> <i class="fas fa-bus"></i> Transporte Público</label>
+          <label><input type="checkbox" class="filtro-mapa" value="park" checked> <i class="fas fa-tree"></i> Parques</label>
+        </div>
+      </div>
+    </div>
+    
+    <div id="map"></div>
+    <p class="map-info"><i class="fas fa-info-circle"></i> Clique nos ícones para ver detalhes em tempo real: ocupação de lixeiras, qualidade do ar, geração de energia e mais.</p>
+  </section>
+
+  <!-- Projetos Detalhados -->
+  <section id="projetos" class="projects-section">
+    <div class="section-header">
+      <h2>Projetos Detalhados</h2>
+      <p class="section-subtitle">Conheça as soluções inteligentes que estão transformando nossa cidade</p>
+    </div>
+    
+    <div class="card-container centered">
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-recycle"></i>
+        </div>
+        <h3>Ecoponto Inteligente</h3>
+        <div class="card-content">
+          <p><strong>Problema:</strong> Descarte irregular e baixa reciclagem.</p>
+          <p><strong>Solução:</strong> Sensores IoT monitoram nível e tipo de resíduo.</p>
+          <p><strong>Impacto:</strong> +40% na reciclagem e redução de lixo nas ruas.</p>
+        </div>
+        <img src="img/ecoponto.png" alt="Ecoponto">
+        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-solar-panel"></i>
+        </div>
+        <h3>Ciclovia Solar</h3>
+        <div class="card-content">
+          <p><strong>Problema:</strong> Baixa geração de energia limpa em áreas urbanas.</p>
+          <p><strong>Solução:</strong> Painéis solares integrados ao pavimento da ciclovia.</p>
+          <p><strong>Impacto:</strong> Energia para iluminação pública e carregadores de bikes.</p>
+        </div>
+        <img src="img/ciclovia.png" alt="Ciclovia Solar">
+        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+      </div>
+      
+      <div class="card">
+        <div class="card-icon">
+          <i class="fas fa-heartbeat"></i>
+        </div>
+        <h3>Totem de Saúde</h3>
+        <div class="card-content">
+          <p><strong>Problema:</strong> Filas longas e acesso limitado à saúde básica.</p>
+          <p><strong>Solução:</strong> Totens com IA para triagem e orientação médica.</p>
+          <p><strong>Impacto:</strong> Atendimento rápido e desafogamento de UBS.</p>
+        </div>
+        <img src="img/totem.png" alt="Totem de Saúde">
+        <a href="#" class="card-link">Saiba mais <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engajamento -->
+  <section id="engajamento" class="engagement-section">
+    <div class="engagement-container">
+      <div class="engagement-content">
+        <h2>Faça parte da transformação!</h2>
+        <p class="lead">Sua participação é essencial para construir uma cidade mais inteligente e sustentável.</p>
+        <ul class="benefits-list">
+          <li><i class="fas fa-check-circle"></i> Cadastre-se e ganhe pontos sustentáveis</li>
+          <li><i class="fas fa-check-circle"></i> Participe de projetos comunitários</li>
+          <li><i class="fas fa-check-circle"></i> Troque pontos por benefícios</li>
+          <li><i class="fas fa-check-circle"></i> Acompanhe seu impacto na cidade</li>
+        </ul>
+      </div>
+      
+      <form id="form-engajamento" class="engagement-form">
+        <h3>Cadastre-se agora</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Nome completo" required />
+          <i class="fas fa-user"></i>
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="E-mail" required />
+          <i class="fas fa-envelope"></i>
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Celular (opcional)" />
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>Cadastrar e Ganhar Pontos</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Dashboard Original -->
+  <section id="dashboard" class="dashboard-section">
+    <div class="section-header">
+      <h2>Dashboard em Tempo Real</h2>
+      <p class="section-subtitle">Dados atualizados sobre a cidade inteligente</p>
+    </div>
+    
+    <button id="toggle-dashboard" class="dashboard-toggle-btn">
+      <span>Esconder Dashboard</span>
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    
+    <div id="dashboard-content">
+      <div class="card-container centered">
+        <div class="chart-card">
+          <div class="chart-header">
+            <i class="fas fa-wind"></i>
+            <h3>Poluição do Ar (PM2.5)</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="chartAr"></canvas>
+          </div>
+          <div class="chart-footer">
+            <span class="stat-value">42 μg/m³</span>
+            <span class="stat-label">Bom</span>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <i class="fas fa-trash-alt"></i>
+            <h3>Lixo Reciclado</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="chartLixo"></canvas>
+          </div>
+          <div class="chart-footer">
+            <span class="stat-value">2.1 toneladas</span>
+            <span class="stat-label">Este mês</span>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <i class="fas fa-sun"></i>
+            <h3>Energia Solar Gerada</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="chartEnergia"></canvas>
+          </div>
+          <div class="chart-footer">
+            <span class="stat-value">120 kWh</span>
+            <span class="stat-label">Hoje</span>
+          </div>
+        </div>
+        
+        <div class="chart-card">
+          <div class="chart-header">
+            <i class="fas fa-medkit"></i>
+            <h3>Atendimentos em Totens</h3>
+          </div>
+          <div class="chart-container">
+            <canvas id="chartSaude"></canvas>
+          </div>
+          <div class="chart-footer">
+            <span class="stat-value">34 pessoas</span>
+            <span class="stat-label">Hoje</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="stats-grid centered">
+        <div class="stat-card">
+          <i class="fas fa-tint"></i>
+          <div class="stat-info">
+            <span class="stat-value">850 m³</span>
+            <span class="stat-label">Consumo de Água</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <i class="fas fa-car"></i>
+          <div class="stat-info">
+            <span class="stat-value">32 min</span>
+            <span class="stat-label">Trânsito (Tempo Médio)</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <i class="fas fa-wifi"></i>
+          <div class="stat-info">
+            <span class="stat-value">260</span>
+            <span class="stat-label">Wi-Fi Público</span>
+          </div>
+        </div>
+        
+        <div class="stat-card">
+          <i class="fas fa-shield-alt"></i>
+          <div class="stat-info">
+            <span class="stat-value">5</span>
+            <span class="stat-label">Ocorrências de Segurança</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Investidores -->
+  <section id="investidores" class="investors-section">
+    <div class="section-header">
+      <h2>Junte-se a nós</h2>
+      <p class="section-subtitle">Empresas, startups e ONGs: faça parte da transformação da cidade</p>
+    </div>
+    
+    <div class="investors-container">
+      <div class="partners-logos">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/1200px-OpenAI_Logo.svg.png" alt="OpenAI">
+        <img src="https://d.ibtimes.co.uk/en/full/1359327/deepmind-logo.png?w=293" alt="DeepMind">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.WETdSr5PMzyIPQ1zf9snuQHaHT?r=0&w=600&h=592&rs=1&pid=ImgDetMain&o=7&rm=3" alt="IBM Watson">
+        <img src="https://th.bing.com/th/id/R.e65bcad9eb2282bfd515ca2ecef361c1?rik=81JNtqJUine9tQ&riu=http%3a%2f%2fhdqwalls.com%2fdownload%2fnvidia-brand-logo-2-2932x2932.jpg&ehk=kGthKDBMw1uPKP3IGvWiX5ghzJ5KZ79wPTw%2b5l%2fMzJQ%3d&risl=&pid=ImgRaw&r=0" alt="NVIDIA">
+      </div>
+      
+      <div class="benefits">
+        <h3>Benefícios de ser um parceiro:</h3>
+        <ul>
+          <li><i class="fas fa-check"></i> Visibilidade para sua marca</li>
+          <li><i class="fas fa-check"></i> Acesso a dados urbanos</li>
+          <li><i class="fas fa-check"></i> Oportunidades de negócios</li>
+          <li><i class="fas fa-check"></i> Descontos em licitações</li>
+          <li><i class="fas fa-check"></i> Networking com outros parceiros</li>
+        </ul>
+      </div>
+      
+      <form id="form-parceria" class="investor-form">
+        <h3>Se interessou?</h3>
+        <div class="form-group">
+          <input type="text" placeholder="Nome da empresa" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="E-mail de contato" required />
+        </div>
+        <div class="form-group">
+          <input type="tel" placeholder="Telefone" />
+        </div>
+        <div class="form-group">
+          <select required>
+            <option value="" disabled selected>Tipo de parceria</option>
+            <option value="tecnologia" style="color: var(--dark);">Fornecedor de Tecnologia</option>
+            <option value="investidor" style="color: var(--dark);">Investidor</option>
+            <option value="ong" style="color: var(--dark);">ONG/Instituto</option>
+            <option value="pesquisa" style="color: var(--dark);">Pesquisa & Desenvolvimento</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-btn">
+          <span>Quero Fazer Parte</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>São Paulo Inteligente</h3>
+        <p>Inovação urbana com foco em IoT, IA e participação cidadã.</p>
+      </div>
+      
+      <div class="footer-links">
+        <div class="link-group small">
+          <h4>Projetos</h4>
+          <a href="#">Mobilidade</a>
+          <a href="#">Sustentabilidade</a>
+          <a href="#">Saúde</a>
+          <a href="#">Resíduos</a>
+        </div>
+        
+        <div class="link-group small">
+          <h4>Sobre</h4>
+          <a href="#">Nossa Missão</a>
+          <a href="#">Equipe</a>
+          <a href="#">Parceiros</a>
+          <a href="#">Contato</a>
+        </div>
+        
+        <div class="link-group small">
+          <h4>Legal</h4>
+          <a href="#">Termos de Uso</a>
+          <a href="#">Privacidade</a>
+          <a href="#">Acessibilidade</a>
+          <a href="#">Transparência</a>
+        </div>
+      </div>
+      
+      <div class="footer-social">
+        <h4>Conecte-se</h4>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="newsletter">
+          <input type="email" placeholder="Seu e-mail" />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2025 Projeto São Paulo Inteligente. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <strong>SENAI</strong> & <strong>IPT</strong> em parceria com a Prefeitura de São Paulo.</p>
+    </div>
+  </footer>
+
+  <!-- Leaflet Map -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  // Inicializa o mapa
+  const map = L.map('map').setView([-23.5505, -46.6333], 11);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors'
+  }).addTo(map);
+
+  // Função para criar ícones personalizados com Font Awesome
+  function createIcon(iconClass, color) {
+    return L.divIcon({
+      html: `<div class="map-marker" style="color: ${color}"><i class="${iconClass}"></i></div>`,
+      className: 'map-marker-icon',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32],
+      tooltipAnchor: [16, -40]
+    });
+  }
+
+  // Ícones personalizados
+  const iconEcoponto = createIcon('fas fa-recycle', '#16a34a');
+  const iconCiclovia = createIcon('fas fa-solar-panel', '#f59e0b');
+  const iconTotem = createIcon('fas fa-heartbeat', '#ef4444');
+  const iconBike = createIcon('fas fa-bicycle', '#3b82f6');
+  const iconAr = createIcon('fas fa-wind', '#8b5cf6');
+  const iconHospital = createIcon('fas fa-hospital', '#e11d48');
+  const iconSchool = createIcon('fas fa-school', '#fbbf24');
+  const iconBus = createIcon('fas fa-bus', '#0ea5e9');
+  const iconPark = createIcon('fas fa-tree', '#22c55e');
+  const iconCamera = createIcon('fas fa-video', '#64748b');
+  const iconLight = createIcon('fas fa-lightbulb', '#facc15');
+  const iconWifi = createIcon('fas fa-wifi', '#3b82f6');
+  const iconFire = createIcon('fas fa-fire-extinguisher', '#ef4444');
+  const iconPolice = createIcon('fas fa-shield-alt', '#2563eb');
+
+  // Lista de marcadores enriquecidos
+  const pontos = [
+    // Ecopontos
+    { lat: -23.5505, lng: -46.6333, icon: iconEcoponto, popup: '<div class="map-popup"><h3>Ecoponto Central</h3><p><i class="fas fa-trash-alt"></i> Ocupação: <strong>80%</strong></p><p><i class="fas fa-wind"></i> Qualidade do ar: <strong>Boa</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Ecoponto Inteligente', tipo: 'ecoponto' },
+    { lat: -23.5200, lng: -46.6400, icon: iconEcoponto, popup: '<div class="map-popup"><h3>Ecoponto Vila Nova</h3><p><i class="fas fa-trash-alt"></i> Ocupação: <strong>60%</strong></p><p><i class="fas fa-recycle"></i> Aceita: plástico, vidro, metal</p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Ecoponto Inteligente', tipo: 'ecoponto' },
+    
+    // Ciclovias solares
+    { lat: -23.5678, lng: -46.6500, icon: iconCiclovia, popup: '<div class="map-popup"><h3>Ciclovia Solar - Av. Paulista</h3><p><i class="fas fa-bolt"></i> Energia gerada: <strong>120 kWh</strong></p><p><i class="fas fa-sun"></i> Eficiência: <strong>85%</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Ciclovia Solar', tipo: 'ciclovia' },
+    
+    // Totens de saúde
+    { lat: -23.5333, lng: -46.6167, icon: iconTotem, popup: '<div class="map-popup"><h3>Totem de Saúde - Vila Mariana</h3><p><i class="fas fa-user-md"></i> Atendimentos hoje: <strong>34</strong></p><p><i class="fas fa-clock"></i> Tempo médio: <strong>8 min</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Totem de Saúde', tipo: 'totem' },
+    
+    // Bicicletas compartilhadas
+    { lat: -23.5420, lng: -46.6310, icon: iconBike, popup: '<div class="map-popup"><h3>Estação Bike - República</h3><p><i class="fas fa-bicycle"></i> Bicicletas disponíveis: <strong>12</strong></p><p><i class="fas fa-battery-three-quarters"></i> Carga média: <strong>75%</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Estação Bike', tipo: 'bike' },
+    
+    // Monitoramento do ar
+    { lat: -23.5700, lng: -46.6250, icon: iconAr, popup: '<div class="map-popup"><h3>Monitoramento do Ar - Perdizes</h3><p><i class="fas fa-wind"></i> PM2.5: <strong>42 μg/m³</strong></p><p><i class="fas fa-lungs"></i> Qualidade: <strong>Boa</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Monitor de Ar', tipo: 'ar' },
+    
+    // Hospitais
+    { lat: -23.5500, lng: -46.6200, icon: iconHospital, popup: '<div class="map-popup"><h3>Hospital Municipal</h3><p><i class="fas fa-procedures"></i> Leitos disponíveis: <strong>15</strong></p><p><i class="fas fa-clock"></i> Tempo de espera: <strong>25 min</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Hospital', tipo: 'hospital' },
+    
+    // Escolas
+    { lat: -23.5400, lng: -46.6500, icon: iconSchool, popup: '<div class="map-popup"><h3>Escola Municipal</h3><p><i class="fas fa-graduation-cap"></i> Alunos: <strong>420</strong></p><p><i class="fas fa-wifi"></i> Conexão: <strong>120 Mbps</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Escola', tipo: 'school' },
+    
+    // Transporte público
+    { lat: -23.5600, lng: -46.6200, icon: iconBus, popup: '<div class="map-popup"><h3>Ponto de Ônibus - Centro</h3><p><i class="fas fa-bus"></i> Próximo ônibus: <strong>5 min</strong></p><p><i class="fas fa-users"></i> Lotação: <strong>60%</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Ônibus', tipo: 'bus' },
+    
+    // Parques
+    { lat: -23.5800, lng: -46.6200, icon: iconPark, popup: '<div class="map-popup"><h3>Parque Ibirapuera</h3><p><i class="fas fa-users"></i> Visitantes hoje: <strong>1200</strong></p><p><i class="fas fa-tree"></i> Qualidade do ar: <strong>Excelente</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Parque', tipo: 'park' },
+    
+    // Câmeras de segurança
+    { lat: -23.5500, lng: -46.6400, icon: iconCamera, popup: '<div class="map-popup"><h3>Câmera de Segurança</h3><p><i class="fas fa-circle"></i> Status: <strong class="online">Online</strong></p><p><i class="fas fa-history"></i> Última manutenção: <strong>2 dias</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Câmera', tipo: 'camera' },
+    
+    // Iluminação pública
+    { lat: -23.5700, lng: -46.6500, icon: iconLight, popup: '<div class="map-popup"><h3>Poste Inteligente</h3><p><i class="fas fa-lightbulb"></i> Status: <strong class="online">Funcionando</strong></p><p><i class="fas fa-bolt"></i> Consumo: <strong>45W</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Iluminação', tipo: 'light' },
+    
+    // Wi-Fi público
+    { lat: -23.5500, lng: -46.6200, icon: iconWifi, popup: '<div class="map-popup"><h3>Wi-Fi Público</h3><p><i class="fas fa-wifi"></i> Usuários conectados: <strong>120</strong></p><p><i class="fas fa-tachometer-alt"></i> Velocidade: <strong>50 Mbps</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Wi-Fi', tipo: 'wifi' },
+    
+    // Bombeiros
+    { lat: -23.5600, lng: -46.6500, icon: iconFire, popup: '<div class="map-popup"><h3>Estação de Bombeiros</h3><p><i class="fas fa-fire-extinguisher"></i> Status: <strong class="online">Disponível</strong></p><p><i class="fas fa-ambulance"></i> Tempo de resposta: <strong>4 min</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Bombeiros', tipo: 'fire' },
+    
+    // Polícia
+    { lat: -23.5700, lng: -46.6200, icon: iconPolice, popup: '<div class="map-popup"><h3>Delegacia</h3><p><i class="fas fa-shield-alt"></i> Status: <strong class="online">Operando</strong></p><p><i class="fas fa-clock"></i> Plantão: <strong>24h</strong></p><a href="#" class="popup-link">Mais detalhes <i class="fas fa-arrow-right"></i></a></div>', tooltip: 'Polícia', tipo: 'police' }
+  ];
+
+  // Array para guardar os marcadores Leaflet
+  let marcadores = [];
+
+  // Função para renderizar marcadores conforme filtros
+  function renderizarMarcadores() {
+    // Remove marcadores antigos
+    marcadores.forEach(m => map.removeLayer(m));
+    marcadores = [];
+    // Pega filtros ativos
+    const filtros = Array.from(document.querySelectorAll('.filtro-mapa:checked')).map(el => el.value);
+    pontos.forEach(p => {
+      if (filtros.includes(p.tipo)) {
+        const marker = L.marker([p.lat, p.lng], { icon: p.icon })
+          .addTo(map)
+          .bindPopup(p.popup)
+          .bindTooltip(p.tooltip, { direction: 'top' });
+        marcadores.push(marker);
+      }
+    });
+  }
+
+  // Inicializa marcadores
+  renderizarMarcadores();
+
+  // Atualiza marcadores ao mudar filtros
+  document.querySelectorAll('.filtro-mapa').forEach(el => {
+    el.addEventListener('change', renderizarMarcadores);
+  });
+  </script>
+
+  <!-- Gráficos -->
+  <script>
+    // Botão de mostrar/esconder dashboard
+    const dashboardContent = document.getElementById('dashboard-content');
+    const toggleBtn = document.getElementById('toggle-dashboard');
+    let dashboardVisible = true;
+
+    toggleBtn.addEventListener('click', () => {
+      dashboardVisible = !dashboardVisible;
+      dashboardContent.style.display = dashboardVisible ? 'block' : 'none';
+      toggleBtn.querySelector('span').textContent = dashboardVisible ? 'Esconder Dashboard' : 'Mostrar Dashboard';
+      toggleBtn.querySelector('i').className = dashboardVisible ? 'fas fa-chevron-up' : 'fas fa-chevron-down';
+      
+      // Animação suave
+      if (dashboardVisible) {
+        dashboardContent.style.opacity = '0';
+        dashboardContent.style.transform = 'translateY(20px)';
+        dashboardContent.style.display = 'block';
+        
+        setTimeout(() => {
+          dashboardContent.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+          dashboardContent.style.opacity = '1';
+          dashboardContent.style.transform = 'translateY(0)';
+        }, 10);
+      }
+    });
+
+    // Configuração padrão para Chart.js
+    Chart.defaults.font.family = "'Poppins', sans-serif";
+    Chart.defaults.color = '#94a3b8';
+    Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.08)';
+
+    // Função para criar gráficos
+    function createChart(ctx, type, label, labels, data, colors) {
+      return new Chart(ctx, {
+        type: type,
+        data: {
+          labels: labels,
+          datasets: [{
+            label: label,
+            data: data,
+            backgroundColor: colors.background,
+            borderColor: colors.border,
+            borderWidth: 2,
+            borderRadius: 6,
+            pointBackgroundColor: colors.border,
+            pointBorderColor: '#fff',
+            pointHoverRadius: 6,
+            pointHoverBorderWidth: 2
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: {
+              display: false
+            },
+            tooltip: {
+              backgroundColor: '#1e293b',
+              titleColor: '#f8fafc',
+              bodyColor: '#e2e8f0',
+              borderColor: '#334155',
+              borderWidth: 1,
+              padding: 12,
+              usePointStyle: true,
+              callbacks: {
+                label: function(context) {
+                  return `${context.dataset.label}: ${context.raw}`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                color: 'rgba(255, 255, 255, 0.08)',
+                drawBorder: false
+              },
+              ticks: {
+                font: {
+                  size: 12
+                }
+              }
+            },
+            x: {
+              grid: {
+                display: false,
+                drawBorder: false
+              },
+              ticks: {
+                font: {
+                  size: 12
+                }
+              }
+            }
+          },
+          animation: {
+            duration: 1000,
+            easing: 'easeOutQuart'
+          }
+        }
+      });
+    }
+
+    // Gráficos principais
+    const chartAr = createChart(
+      document.getElementById('chartAr').getContext('2d'),
+      'line',
+      'PM2.5 (μg/m³)',
+      ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb', 'Dom'],
+      [42, 45, 48, 44, 40, 38, 42],
+      {
+        background: 'rgba(59, 130, 246, 0.1)',
+        border: '#3b82f6'
+      }
+    );
+
+    const chartLixo = createChart(
+      document.getElementById('chartLixo').getContext('2d'),
+      'bar',
+      'Toneladas',
+      ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun'],
+      [1.5, 1.8, 2.1, 2.0, 1.9, 2.1],
+      {
+        background: 'rgba(22, 163, 74, 0.2)',
+        border: '#16a34a'
+      }
+    );
+
+    const chartEnergia = createChart(
+      document.getElementById('chartEnergia').getContext('2d'),
+      'bar',
+      'kWh',
+      ['06h', '09h', '12h', '15h', '18h', '21h'],
+      [20, 80, 120, 110, 60, 30],
+      {
+        background: 'rgba(245, 158, 11, 0.2)',
+        border: '#f59e0b'
+      }
+    );
+
+    const chartSaude = createChart(
+      document.getElementById('chartSaude').getContext('2d'),
+      'line',
+      'Pessoas',
+      ['08h', '10h', '12h', '14h', '16h', '18h'],
+      [5, 12, 34, 28, 18, 8],
+      {
+        background: 'rgba(139, 92, 246, 0.1)',
+        border: '#8b5cf6'
+      }
+    );
+
+    // Animar os gráficos quando a seção for visível
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          chartAr.update();
+          chartLixo.update();
+          chartEnergia.update();
+          chartSaude.update();
+        }
+      });
+    }, { threshold: 0.1 });
+
+    observer.observe(document.getElementById('dashboard'));
+  </script>
+
+  <!-- Formulários e Interações -->
+  <script>
+    // Menu mobile
+    document.querySelector('.menu-toggle').addEventListener('click', () => {
+      document.querySelector('header').classList.toggle('menu-open');
+      document.querySelector('nav').classList.toggle('show');
+    });
+
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('header').classList.remove('menu-open');
+        document.querySelector('nav').classList.remove('show');
+      });
+    });
+
+    // Suavizar rolagem para âncoras
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Formulário de engajamento
+    document.getElementById('form-engajamento').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.querySelector('span').textContent;
+      const originalIcon = submitBtn.querySelector('i').className;
+      
+      // Simular envio
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Enviando...';
+      submitBtn.querySelector('i').className = 'fas fa-spinner fa-spin';
+      
+      try {
+        // Simular atraso de rede
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Mostrar notificação de sucesso
+        showNotification('Cadastro realizado com sucesso! Você ganhou 50 pontos de sustentabilidade.', 'success');
+        
+        // Resetar formulário
+        form.reset();
+      } catch (error) {
+        showNotification('Ocorreu um erro ao enviar. Por favor, tente novamente.', 'error');
+      } finally {
+        // Restaurar botão
+        submitBtn.querySelector('span').textContent = originalText;
+        submitBtn.querySelector('i').className = originalIcon;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Formulário de parceria
+    document.getElementById('form-parceria').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const originalText = submitBtn.querySelector('span').textContent;
+      const originalIcon = submitBtn.querySelector('i').className;
+      
+      // Simular envio
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Enviando...';
+      submitBtn.querySelector('i').className = 'fas fa-spinner fa-spin';
+      
+      try {
+        // Simular atraso de rede
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        // Mostrar notificação de sucesso
+        showNotification('Sua proposta foi enviada! Em breve entraremos em contato.', 'success');
+        
+        // Resetar formulário
+        form.reset();
+      } catch (error) {
+        showNotification('Ocorreu um erro ao enviar. Por favor, tente novamente.', 'error');
+      } finally {
+        // Restaurar botão
+        submitBtn.querySelector('span').textContent = originalText;
+        submitBtn.querySelector('i').className = originalIcon;
+        submitBtn.disabled = false;
+      }
+    });
+
+    // Função para mostrar notificações
+    function showNotification(message, type = 'success') {
+      const notification = document.createElement('div');
+      notification.className = `notification ${type}`;
+      notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+      `;
+      document.body.appendChild(notification);
+      
+      // Mostrar notificação
+      setTimeout(() => {
+        notification.classList.add('show');
+      }, 10);
+      
+      // Remover notificação após 5 segundos
+      setTimeout(() => {
+        notification.classList.remove('show');
+        setTimeout(() => {
+          notification.remove();
+        }, 300);
+      }, 5000);
+    }
+
+    // Efeito de digitação no hero
+    const heroTitle = document.querySelector('.hero h2');
+    if (heroTitle) {
+      const originalText = heroTitle.textContent;
+      heroTitle.textContent = '';
+      
+      let i = 0;
+      const typingEffect = setInterval(() => {
+        if (i < originalText.length) {
+          heroTitle.textContent += originalText.charAt(i);
+          i++;
+        } else {
+          clearInterval(typingEffect);
+        }
+      }, 50);
+    }
+
+    // Animação de contadores nos stats
+    const statCards = document.querySelectorAll('.stat-card .stat-value');
+    statCards.forEach(card => {
+      const target = parseInt(card.textContent);
+      const suffix = card.textContent.match(/\D+$/)?.[0] || '';
+      const duration = 2000;
+      const start = 0;
+      const startTime = Date.now();
+      
+      const animateCounter = () => {
+        const now = Date.now();
+        const progress = Math.min((now - startTime) / duration, 1);
+        const value = Math.floor(progress * (target - start) + start);
+        card.textContent = value + suffix;
+        
+        if (progress < 1) {
+          requestAnimationFrame(animateCounter);
+        }
+      };
+      
+      // Observar quando o elemento entra na viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            animateCounter();
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      
+      observer.observe(card.closest('.stat-card'));
+    });
+  </script>
+</body>
+</html>
